@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: #2c3e5092; /* Change selection background color */
+    color: #ffffff; /* Change selection text color */
+}
+
+body{
+    /* position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh; */
+    background-image: url(/images/bg5.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* filter: blur(8px); */
+    z-index: -1;
+    /* -webkit-backdrop-filter:blur(18px); */
+    
+}
+
+
+
+header{
+    font-family: 'Open Sans', sans-serif !important;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+nav{
+    height: 80px;
+    background-color: #2c3e50;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+
+
+
+
+nav img{
+    width: 120px;
+    position: absolute;
+    left:7%;
+    top:15px;
+
+}
+
+/* nav ul{
+    float: right;
+    margin-right:25px;
+    list-style: none;
+    
+} */
+
+nav ul {
+    margin-right: 25px;
+    list-style: none;
+}
+
+
+
+
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin:0 15px;
+    
+}
+
+nav ul li a{
+    position: relative;
+    color: white !important;
+    font-size: 14px;
+    padding: 5px 0;
+    text-decoration: none !important;
+    text-transform: uppercase;
+}
+
+nav ul li a:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width:100%;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .4s linear;
+    border-radius: 3px;
+    
+}
+
+
+
+
+
+
+
+
+nav ul li a:hover:before{
+   
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+label #btn, label #cancel{
+    color: white;
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 22px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display:none;
+}
+
+
+
+/* ======================================================================1118px============================================================== */
+
+@media(max-width:1118px){
+    nav img{
+        left: 8%;
+    }
+
+}
+
+
+
+/* ======================================================================944px============================================================== */
+@media(max-width:944px){
+    nav img{
+        left: 4.5%;
+        top:13px;
+        width:130px
+    }
+    nav ul li a{
+        font-size: 17px;
+    }
+
+}
+
+/* ======================================================================860px============================================================== */
+@media(max-width:860px){
+    label #btn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #34495e;
+        top:80px;
+        left:-100%;
+        text-align: center;
+        transition:all .5s;
+
+    }
+
+    nav ul li{
+        display: block;
+        margin:50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a{
+        font-size: 20px;
+    }
+
+    #check:checked~ul{
+        left: 0;
+    }
+
+    #check:checked~ label #btn{
+        display: none;
+    }
+
+    #check:checked~ label #cancel{
+        display: block;
+    }
+
+   
+    .col-md-2{
+        margin: 12px;
+    }
+
+
+}
+
+
+
+/* .lottie1{
+        
+    position: relative;
+}
+
+.animation{
+    width: 90%;
+} */
+
+
+    
+    #wave{
+      display: inline-flex;
+      width: 50px;
+      height: auto;
+      margin-top: -25px;
+    }
+    h4{
+      display: inline-flex;
+    }
+    
+    .underline{
+    position: relative;
+    }
+    
+    .underline:after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      border-top: solid 4px red;
+      left:0;
+      bottom: -10px;
+      border-radius: 50%;
+      height: 7px;
+    
+    
+    
+    }
+
+   
+
+    #name{
+        color: rgb(57, 120, 207);
+        /* font-family: 'Oswald', sans-serif; */
+      }
+    
+    .profile{
+        color: #555;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.56em;
+    }
+
+    .profile, .left-detail{
+        color: #555;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.2em;
+    }
+
+    
+/* =====================================================Scrollbar================================================================== */
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    /* width: 10px;
+    background: #176173c5;  */
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 2px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+
+/* 
+section::after{
+    height: 100vh;
+} */
+
+/* section:nth-child(2){
+    height: 110vh;
+    
+} */
+
+
+#man{
+
+    width: 60%;
+}
+
+.footer{
+    height: 50px;
+    width: 100%;
+    background-color: #2c3e50;
+}
+
+.footer-text{
+    color: white;
+    /* font-family: 'Fira Sans', sans-serif; */
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+
+
+.arrow-box{
+    position: fixed;
+    right: 35px;
+    bottom: 52px;
+    z-index: 100;     
+}
+
+#scroll-to-top{
+    font-size: 35px;
+    color: #2c3e50;
+    cursor:pointer;
+    display: none; 
+    z-index: 100;
+}
+
+
+
+.card_logs{
+    height: 150px;
+    transition: transform 0.3s ease-in-out;
+    background-color: transparent;
+    border:2.8px solid #2c3e50 ;
+    text-align: center;
+    padding: 15px;
+    
+    
+}
+
+.card_logs:hover{
+    transform: translateY(-8px);
+    cursor: pointer;
+    box-shadow: 0 0 22px #223243;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.789);
+}
+
+.card_logs>i{
+    color: #2c3e50;
+    font-size: 7em;
+    font-weight: 450;
+    
+}
+
+.card_logs>.image{
+    width: 7.25em;
+    margin: auto;
+}
+
+
+.card_lg{
+    height: auto !important ;
+}
+
+.card-header{
+    background-color: #2c3e5092;
+    color: white;
+    padding: 18px;
+}
+
+.card-btn{
+    color: #2c3e50;
+    border:2px solid #2c3e50;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    transition:transform 0.3s ease-in-out ;
+}
+.card-btn:hover{
+    background-color: #2c3e50;
+    color: #ffffff;
+}
+
+
+
+.institute_logo{
+    margin-top: 90px;
+}
