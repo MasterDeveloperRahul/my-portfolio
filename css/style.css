@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Open+Sans:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,500&display=swap');
 
 *{
     margin: 0;
@@ -52,7 +54,7 @@ nav{
 
 
 nav img{
-    width: 120px;
+    width: 180px;
     position: absolute;
     left:7%;
     top:15px;
@@ -150,9 +152,9 @@ label #btn, label #cancel{
 /* ======================================================================944px============================================================== */
 @media(max-width:944px){
     nav img{
-        left: 4.5%;
-        top:13px;
-        width:130px
+        left: 3%;
+        top:20px;
+        width:140px
     }
     nav ul li a{
         font-size: 17px;
@@ -215,10 +217,9 @@ label #btn, label #cancel{
         margin-top: 100px;
       }
 
+     
+
       .resume-logo{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
         margin-bottom: 0;
         width: 65%;
         margin-top: 50px;
@@ -230,14 +231,15 @@ label #btn, label #cancel{
 
 
 
-/* .lottie1{
+/* .coding-animation{
         
-    position: relative;
-}
-
-.animation{
-    width: 90%;
+   
+    width: 50%;
 } */
+
+/* .animation{
+    width: 90%;
+}  */
 
 
     
@@ -299,7 +301,7 @@ label #btn, label #cancel{
 
     #name{
         color: rgb(57, 120, 207);
-        /* font-family: 'Oswald', sans-serif; */
+        font-family: 'Oswald', sans-serif;
       }
     
     .profile{
@@ -313,6 +315,14 @@ label #btn, label #cancel{
     font-family: 'Fira Sans', sans-serif;
     font-size: 1.2em;
     }
+
+
+
+.customized-title{
+    color:#34495e;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 800;
+}
 
     
 /* =====================================================Scrollbar================================================================== */
@@ -382,8 +392,13 @@ section::after{
     display: none; 
     z-index: 100;
 }
-
-
+.second-section{
+    margin-top: 100px;
+}
+.tool{
+    margin-top: 6em;
+    margin-bottom: 6em;
+}
 
 .card_logos{
     height: 150px;
@@ -451,14 +466,34 @@ section::after{
     width: 180px;
   }
 
- 
+  .logo-disc{
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #888888bb;
+    box-shadow: 5px 5px 5px #888888;
+}
+.card-text{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.1em;
+    color: #555;
+    
+}
+
+
+
+.card-header{
+    font-family: 'Roboto Condensed', sans-serif;
+}
 
 
 
 iframe{
-    width: 100%;
-    height: 161em;
-    border: none;
+    width: 98%;
+    height: 158em;
+    background-color: #ffffff;
     
     
     
@@ -515,4 +550,5 @@ iframe{
     border-color: #2c3e50;
     box-shadow: 0 0 0 0.2rem rgba(44, 62, 80, 0.35);
 }
+
 
