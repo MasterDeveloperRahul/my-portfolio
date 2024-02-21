@@ -9,6 +9,168 @@
     box-sizing: border-box;
 }
 
+/* page-loader */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #ddd; height:100%;overflow-x: hidden;}	
+.text{color:brown;font-size:220px;text-align:center;}
+.open{color:green;background:#000;padding:10px;border-radius:20px;}
+
+/* Preloader */
+.container-preloader {
+	align-items:center; display:flex; height:100%;
+  justify-content:center; position:fixed; left:0; top:0; width:100%; z-index:900;
+  /* cursor:progres; */
+}
+.container-preloader .animation-preloader {
+	position:absolute;
+     z-index: 100;}
+
+/* Spinner Loading */
+.container-preloader .animation-preloader .spinner {
+    
+  animation: spinner 1s infinite linear;
+	border-radius: 50%;  border: 8px solid rgba(0, 0, 0, 0.2);
+  border-top-color: #2c3e50; /* It is not in alphabetical order so that you do not overwrite it */
+  height: 9em;  margin: 0 auto 3.5em auto; width: 9em;
+}
+/* Breathing Animation */
+@keyframes breathing {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(.9); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+
+.container-preloader .animation-preloader img {
+    position: absolute;
+    top: 8%;
+    left: 42.1%;
+    transform: translate(-50%, -50%);
+    height: 6.2em; /* Adjust the height as needed */
+    width: 6.2em; /* Adjust the width as needed */
+    animation: breathing 3s infinite ease-in-out;
+  }
+
+
+/* Loading text */
+.container-preloader .animation-preloader .txt-loading {
+  font: bold 3em 'Montserrat', sans-serif;
+	text-align: center;	user-select: none;
+}
+.container-preloader .animation-preloader .txt-loading .characters:before {
+  animation: characters 4s infinite;  color: #7194e6;
+  content: attr(preloader-text);  left: 0;
+  opacity: 0;  position: absolute;  top: 0;
+  transform: rotateY(-90deg);
+}
+.container-preloader .animation-preloader .txt-loading .characters {
+	color: rgba(0, 0, 0, 0.2);	position: relative;
+}
+.container-preloader .animation-preloader .txt-loading .characters:nth-child(2):before {
+  animation-delay: 0.2s;
+}
+.container-preloader .animation-preloader .txt-loading .characters:nth-child(3):before {
+  animation-delay: 0.4s;
+}
+.container-preloader .animation-preloader .txt-loading .characters:nth-child(4):before {
+  animation-delay: 0.6s;
+}
+.container-preloader .animation-preloader .txt-loading .characters:nth-child(5):before {
+  animation-delay: 0.8s;
+}
+.container-preloader .animation-preloader .txt-loading .characters:nth-child(6):before {
+  animation-delay: 1s;
+}
+.container-preloader .animation-preloader .txt-loading .characters:nth-child(7):before {
+  animation-delay: 1.2s;
+}
+.container-preloader .loader-section {
+  background-color: #ffffff;  height: 100%;
+  position: fixed;  top: 0;  width: calc(50% + 1px);
+}
+.container-preloader .loader-section.section-left {
+  left: 0;
+}
+.container-preloader .loader-section.section-right {
+  right: 0;
+}
+/* Fade effect on loading animation */
+.loaded .animation-preloader {
+  opacity: 0;
+  transition: 0.3s ease-out;
+}
+/* Curtain effect */
+.loaded .loader-section.section-left {
+  transform: translateX(-101%);
+  transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1.000);
+}
+.loaded .loader-section.section-right {
+  transform: translateX(101%);
+  transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1.000);
+}
+/* Animation of the preloader */
+@keyframes spinner {
+to {
+	transform: rotateZ(360deg);
+}}
+/* Animation of letters loading from the preloader */
+@keyframes characters {
+  0%,
+  75%,
+  100% {
+ opacity: 0;
+ transform: rotateY(-90deg);
+  }
+  25%,
+  50% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }}
+/* Laptop size back (laptop, tablet, cell phone) */
+@media screen and (max-width: 767px) {
+	/* Preloader */
+	/* Spinner Loading */	
+	.container-preloader .animation-preloader .spinner {
+	height: 8em;
+	width: 8em;
+	}
+	/* Text Loading */
+	.container-preloader .animation-preloader .txt-loading {
+	  font: bold 2.5em 'Montserrat', sans-serif;
+	}}
+@media screen and (max-width: 500px) {
+	/* Prelaoder */
+	/* Spinner Loading */
+	.container-preloader .animation-preloader .spinner {
+	height: 7em;
+	width: 7em;
+	}
+    .container-preloader .animation-preloader img {
+        position: absolute;
+        top: 8%;
+        left: 38%;
+        transform: translate(-50%, -50%);
+        height: 5em; /* Adjust the height as needed */
+        width: 5em; /* Adjust the width as needed */
+        animation: breathing 3s infinite ease-in-out;
+      }
+    
+	/*Loading text */
+	.container-preloader .animation-preloader .txt-loading {
+	  font: bold 1.8em 'Montserrat', sans-serif;
+	}}
+.origin{text-decoration:none;
+font-size:45px;}
+
+
+
+/* ================================================== */
+
 ::selection {
     background-color: #2c3e5092; /* Change selection background color */
     color: #ffffff; /* Change selection text color */
@@ -70,6 +232,7 @@ nav img{
 
 nav ul {
     margin-right: 25px;
+    margin-bottom: 0 !important;
     list-style: none;
 }
 
@@ -206,7 +369,9 @@ label #btn, label #cancel{
         margin: 12px;
     }
 
-
+    .logo-disc{
+       margin-top: 70px !important;
+    }
 
     .institute_logo{
         display: block;
@@ -214,7 +379,7 @@ label #btn, label #cancel{
         margin-right: auto;
         margin-bottom: 0;
         width: 65%;
-        margin-top: 100px;
+        
       }
 
      
@@ -225,6 +390,8 @@ label #btn, label #cancel{
         margin-top: 50px;
         margin-bottom: 50px;
       }
+
+  
 
 
 }
@@ -467,8 +634,9 @@ section::after{
   }
 
   .logo-disc{
+    position: relative;
     width: 200px;
-    height: auto;
+    height: 200px;
     border-radius: 50%;
     padding: 10px;
     background-color: #ffffff;
