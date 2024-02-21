@@ -15,6 +15,7 @@
 	margin: 0;
 	padding: 0;
 }
+
 body {
 	background: #ddd; height:100%;overflow-x: hidden;}	
 .text{color:brown;font-size:220px;text-align:center;}
@@ -176,7 +177,7 @@ font-size:45px;}
     color: #ffffff; /* Change selection text color */
 }
 
-body{
+#main-page{
     /* position: relative;
     top: 0;
     left: 0;
