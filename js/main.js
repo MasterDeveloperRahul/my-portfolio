@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var preloader = document.getElementById('preloader');
         preloader.parentNode.removeChild(preloader);
         
-      }, 8000);
+      }, 500);
       
     }
   }, 2000);
