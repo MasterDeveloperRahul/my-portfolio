@@ -77,18 +77,18 @@
                         <input type="hidden" name="redirect" value="https://masterdeveloperrahul.github.io/my-portfolio/success">
                         <input type="hidden" name="from_name" value="My WebSite">
                         <label for="name">Name<span class="required"><sup>*</sup></span></label>
-                        <input class="form-control" name="name" id="name" type="text" placeholder="Your name here" required autocomplete="off">
+                        <input class="form-control" name="name" id="name" type="text" placeholder="Your name here" required autocomplete="off" onfocus="speakText('name')">
                         <br>
                         <label for="email">E-Mail<span class="required"><sup>*</sup></span></label>
-                        <input class="form-control" name="email" id="email" type="email" placeholder="Your email here" required autocomplete="off">
+                        <input class="form-control" name="email" id="email" type="email" placeholder="Your email here" required autocomplete="off" onfocus="speakText('email')">
                         <br>
                         <label for="subject">Subject<span class="required"><sup>*</sup></span></label>
-                        <input class="form-control" name="subject" id="subject" type="text" placeholder="Your subject here" required autocomplete="off">
+                        <input class="form-control" name="subject" id="subject" type="text" placeholder="Your subject here" required autocomplete="off" onfocus="speakText('subject')">
                         <br>
                         <label for="message">Message<span class="required"><sup>*</sup></span></label>
-                        <textarea  class="form-control" name="message" id="message" cols="30" rows="5" placeholder="Write Your Message..." required autocomplete="off"></textarea>
+                        <textarea  class="form-control" name="message" id="message" cols="30" rows="5" placeholder="Write Your Message..." required autocomplete="off" onfocus="speakText('message')"></textarea>
                         <br>
-                        <input class="btn btn-submit" style="width: 100%;" type="submit" value="Send Message" id="showAlertButton">
+                        <input class="btn btn-submit" style="width: 100%;" type="submit" value="Send Message" id="showAlertButton" onclick="">
                     </form>
                 </div></div>
                 
@@ -153,6 +153,65 @@
   }
 })
 });
+
+    </script>
+
+    <script>
+
+//Text to speach
+
+
+let spokenElements = {};
+        let voices = [];
+        let selectedVoice = null;
+
+        function loadVoices() {
+            voices = window.speechSynthesis.getVoices();
+            setSelectedVoice();
+            updateEventListeners(); // Ensure event listeners are set once voices are loaded
+        }
+
+        function setSelectedVoice() {
+            selectedVoice = voices.find(v => v.lang === 'en-US' || v.lang === 'en-GB');
+        }
+
+        function speakText(elementId) {
+            if (spokenElements[elementId]) return;
+
+            const element = document.getElementById(elementId);
+            const text = element.placeholder;
+            const utterance = new SpeechSynthesisUtterance(text);
+
+            if (selectedVoice) {
+                utterance.voice = selectedVoice;
+            }
+
+            utterance.lang = 'en-US';
+            window.speechSynthesis.cancel();  // Cancel any ongoing speech
+            window.speechSynthesis.speak(utterance);
+
+            spokenElements[elementId] = true;
+
+            // Reset spokenElements after some time to allow speaking again
+            setTimeout(() => {
+                spokenElements[elementId] = false;
+            }, 1000); // Reset after 1 second (adjust as needed)
+        }
+
+        function updateEventListeners() {
+            document.getElementById('name').addEventListener('focus', () => speakText('name'));
+            document.getElementById('city').addEventListener('focus', () => speakText('city'));
+            document.getElementById('mobile').addEventListener('focus', () => speakText('mobile'));
+            document.getElementById('email').addEventListener('focus', () => speakText('email'));
+        }
+
+        // Ensuring voices are loaded before trying to use them
+        if (speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = loadVoices;
+        }
+
+        // Initial load of voices
+        loadVoices();
 
     </script>
 </body>
